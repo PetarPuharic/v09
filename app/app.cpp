@@ -1,5 +1,6 @@
 #include "app.h"
 
+
 namespace vsite::oop::v9
 {
 	void fill_vector(std::vector<int>& v, int n) {
@@ -40,12 +41,12 @@ namespace vsite::oop::v9
 	}
 
 	unsigned int unique_numbers(std::stringstream& ss) {
-		std::map<int, bool> unique_map;
+		std::set<int> unique_nums;
 		int number;
 		while (ss >> number) {
-			unique_map[number] = true;
+			unique_nums.insert(number);
 		}
-		return unique_map.size();
+		return unique_nums.size();
 	}
 
 	word_frequency::word_frequency(std::stringstream& ss) {
